@@ -1,0 +1,50 @@
+/* layout.css — page structure (Grid for major layout, Flexbox inside) */
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  min-height: 100vh;
+}
+.site-header { grid-area: header; }
+.main-content { grid-area: main; min-width: 0; padding: var(--space-md); }
+.site-footer { grid-area: footer; }
+
+.container { width: 100%; max-width: var(--container-lg); margin-inline: auto; }
+
+.site-header {
+  position: sticky; top: 0; z-index: var(--z-header);
+  display: flex; align-items: center; gap: var(--space-sm);
+  min-height: var(--header-height);
+  padding: var(--space-sm) var(--space-md);
+}
+.site-header__title { font-size: var(--fs-lg); font-weight: var(--fw-bold); flex: 1; min-width: 0; }
+.site-header__actions { display: flex; align-items: center; gap: var(--space-sm); }
+
+/* Sidebar: off-canvas below 1024px */
+.sidebar {
+  position: fixed; inset: 0 auto 0 0;
+  width: min(var(--sidebar-width), 85vw);
+  z-index: var(--z-sidebar);
+  display: flex; flex-direction: column; gap: var(--space-md);
+  padding: var(--space-md);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  visibility: hidden;
+  /* hide after the slide-out finishes; show immediately on open so focus can move in */
+  transition: transform var(--transition-base), visibility 0s linear var(--transition-base);
+}
+.sidebar.is-open { transform: none; visibility: visible; transition: transform var(--transition-base), visibility 0s; }
+.sidebar-overlay { position: fixed; inset: 0; z-index: var(--z-overlay); background: var(--overlay); }
+.sidebar-overlay[hidden] { display: none; }
+
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
+
+/* Dashboard grids */
+.card-grid { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-flow: dense; gap: var(--space-md); }
+.card-grid > * { min-width: 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: var(--space-md); }
+.page-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md); margin-bottom: var(--space-lg); }
+.stack > * + * { margin-top: var(--space-md); }
+
+.site-footer { padding: var(--space-md); text-align: center; font-size: var(--fs-sm); color: var(--text-muted); }

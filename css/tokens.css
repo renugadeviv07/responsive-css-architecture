@@ -1,0 +1,91 @@
+/* tokens.css — design tokens (raw values + light-theme semantic aliases) */
+:root {
+  /* Brand palette: navy / white / gold-blue accents */
+  --navy-950: #0b1426;
+  --navy-900: #0f1b33;
+  --navy-800: #12264d;
+  --navy-700: #1b3a73;
+  --blue-500: #2f6fe4;
+  --blue-100: #dce8fb;
+  --gold-500: #c8962e;
+  --gold-300: #e8c872;
+  --white: #ffffff;
+  --gray-50: #f5f7fb;
+  --gray-200: #dfe5f0;
+  --gray-600: #4a5670;
+  --green-700: #17703a;
+  --amber-700: #8a5a00;
+  --red-700: #b3261e;
+
+  /* Semantic colors (light theme defaults) */
+  --color-primary: var(--navy-800);
+  --color-primary-hover: var(--navy-700);
+  --color-on-primary: var(--white);
+  --color-secondary: #1d56c4;
+  --color-accent: var(--gold-500);
+  --bg-page: var(--gray-50);
+  --bg-surface: var(--white);
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --bg-sidebar: var(--navy-900);
+  --text-primary: var(--navy-900);
+  --text-muted: var(--gray-600);
+  --text-on-sidebar: #e8edf7;
+  --border-color: var(--gray-200);
+  --border-glass: rgba(255, 255, 255, 0.6);
+  --color-success: var(--green-700);
+  --color-warning: var(--amber-700);
+  --color-error: var(--red-700);
+  --focus-ring: var(--blue-500);
+  --overlay: rgba(11, 20, 38, 0.55);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.625rem);
+  --fs-2xl: clamp(1.5rem, 1.2rem + 1.6vw, 2.25rem);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --lh-tight: 1.25;
+  --lh-normal: 1.55;
+  --ls-tight: -0.01em;
+  --ls-wide: 0.04em;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Radius, shadow, motion */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 27, 51, 0.08);
+  --shadow-md: 0 6px 20px rgba(15, 27, 51, 0.10);
+  --shadow-lg: 0 16px 40px rgba(15, 27, 51, 0.18);
+  --transition-fast: 150ms ease;
+  --transition-base: 220ms ease;
+
+  /* Z-index scale */
+  --z-header: 100;
+  --z-overlay: 150;
+  --z-sidebar: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* Layout */
+  --container-sm: 40rem;
+  --container-md: 64rem;
+  --container-lg: 80rem;
+  --container-xl: 90rem;
+  --sidebar-width: 16rem;
+  --header-height: 4rem;
+  --touch-target: 44px;
+}

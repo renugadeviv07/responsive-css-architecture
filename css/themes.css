@@ -1,0 +1,50 @@
+/* themes.css — dark theme overrides. Light is the default in tokens.css. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: var(--gold-300);
+  --color-primary-hover: #f3d98f;
+  --color-on-primary: var(--navy-950);
+  --bg-page: var(--navy-950);
+  --bg-surface: #13203a;
+  --bg-glass: rgba(24, 38, 68, 0.62);
+  --bg-sidebar: #0a1120;
+  --text-primary: #e8edf7;
+  --text-muted: #a9b5cc;
+  --border-color: #2a3a5c;
+  --border-glass: rgba(255, 255, 255, 0.10);
+  --color-secondary: #7aa7ff;
+  --color-success: #5fd58b;
+  --color-warning: #f0b84a;
+  --color-error: #ff8a80;
+  --focus-ring: #9cc0ff;
+  --blue-100: #1c2f55;
+  --overlay: rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* No saved choice: follow the OS setting */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --color-primary: var(--gold-300);
+    --color-primary-hover: #f3d98f;
+    --color-on-primary: var(--navy-950);
+    --bg-page: var(--navy-950);
+    --bg-surface: #13203a;
+    --bg-glass: rgba(24, 38, 68, 0.62);
+    --bg-sidebar: #0a1120;
+    --text-primary: #e8edf7;
+    --text-muted: #a9b5cc;
+    --border-color: #2a3a5c;
+    --border-glass: rgba(255, 255, 255, 0.10);
+    --color-secondary: #7aa7ff;
+    --color-success: #5fd58b;
+    --color-warning: #f0b84a;
+    --color-error: #ff8a80;
+    --focus-ring: #9cc0ff;
+    --blue-100: #1c2f55;
+    --overlay: rgba(0, 0, 0, 0.65);
+  }
+}

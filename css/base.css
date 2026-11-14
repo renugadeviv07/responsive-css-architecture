@@ -1,0 +1,20 @@
+/* base.css — element defaults */
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+  background: var(--bg-page);
+  overflow-wrap: break-word;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+h1, h2, h3, h4 { line-height: var(--lh-tight); letter-spacing: var(--ls-tight); font-weight: var(--fw-bold); }
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+p + p { margin-top: var(--space-md); }
+a { color: var(--color-secondary); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+hr { border: 0; border-top: 1px solid var(--border-color); }

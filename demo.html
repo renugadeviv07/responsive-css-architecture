@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard – Responsive CSS demo</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/modal.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="app-shell">
+    <header class="site-header">
+      <button class="btn btn--ghost btn--icon" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation menu">☰</button>
+      <p class="site-header__title">Enterprise Dashboard</p>
+      <div class="site-header__actions">
+        <button class="btn btn--ghost" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false"><span data-theme-label>Dark</span></button>
+      </div>
+    </header>
+
+    <div class="sidebar-overlay" hidden></div>
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <p class="sidebar__brand">Enterprise</p>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="demo.html" aria-current="page">Dashboard</a></li>
+          <li><a class="nav-link" href="#">User management</a></li>
+          <li><a class="nav-link" href="#">Add user</a></li>
+          <li><a class="nav-link" href="#">Reports</a></li>
+          <li><a class="nav-link" href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content" id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Dashboard overview</h1>
+          <button class="btn" type="button" data-modal-open="add-dialog">Add user</button>
+        </div>
+
+        <div class="alert alert--success" role="status"><p>Demo data loaded successfully.</p></div>
+
+        <section aria-labelledby="stats-h" class="stack">
+          <h2 id="stats-h" class="visually-hidden">Statistics</h2>
+          <div class="stats-grid">
+            <article class="card stat-card"><p class="stat-card__label">Users</p><p class="stat-card__value">1,284</p></article>
+            <article class="card stat-card"><p class="stat-card__label">Active</p><p class="stat-card__value">976</p></article>
+            <article class="card stat-card"><p class="stat-card__label">Reports</p><p class="stat-card__value">48</p></article>
+            <article class="card stat-card"><p class="stat-card__label">Alerts</p><p class="stat-card__value">3</p></article>
+          </div>
+        </section>
+
+        <section aria-labelledby="cards-h" class="stack" style="margin-top:var(--space-lg)">
+          <h2 id="cards-h">Activity</h2>
+          <div class="card-grid">
+            <article class="card"><h3 class="card__title">Recent sign-ins</h3><p>Averylongunbrokenemailaddressexample@enterprise-organization-domain.example.com signed in.</p></article>
+            <article class="card"><h3 class="card__title">System health</h3><p>All services operational. <span class="badge badge--success">Healthy</span></p></article>
+            <article class="card"><h3 class="card__title">Pending reviews</h3><p>12 items need review. <span class="badge badge--warning">Pending</span></p></article>
+            <article class="card card--wide"><h3 class="card__title">Quarterly summary</h3><p>Usage grew steadily across all regions with strong adoption in the second quarter.</p></article>
+            <article class="card"><h3 class="card__title">Errors</h3><p>2 failed exports. <span class="badge badge--error">Attention</span></p></article>
+          </div>
+        </section>
+
+        <section aria-labelledby="table-h" class="stack" style="margin-top:var(--space-lg)">
+          <h2 id="table-h">Users</h2>
+          <div class="table-wrap" role="region" aria-labelledby="table-h" tabindex="0">
+            <table class="table">
+              <caption class="visually-hidden">User list</caption>
+              <thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Role</th><th scope="col">Department</th><th scope="col">Status</th><th scope="col">Last login</th></tr></thead>
+              <tbody>
+                <tr><td>Asha Raman</td><td>asha.raman@example.com</td><td>Admin</td><td>Operations</td><td><span class="badge badge--success">Active</span></td><td>2026-11-12</td></tr>
+                <tr><td>Kiran Patel</td><td>kiran.patel@example.com</td><td>Editor</td><td>Finance</td><td><span class="badge badge--warning">Pending</span></td><td>2026-11-10</td></tr>
+                <tr><td>Meera Iyer</td><td>meera.iyer@example.com</td><td>Viewer</td><td>Support</td><td><span class="badge badge--error">Locked</span></td><td>2026-10-29</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="form-h" class="stack card" style="margin-top:var(--space-lg)">
+          <h2 id="form-h">Add user</h2>
+          <form class="form-grid" novalidate>
+            <div class="form-field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name"></div>
+            <div class="form-field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="f-email-hint"><span class="form-hint" id="f-email-hint">We never share your email.</span></div>
+            <div class="form-field"><label for="f-role">Role</label><select id="f-role" name="role"><option>Viewer</option><option>Editor</option><option>Admin</option></select></div>
+            <div class="form-field form-field--full"><label for="f-notes">Notes</label><textarea id="f-notes" name="notes" rows="3"></textarea></div>
+            <div class="form-field form-field--full"><button class="btn" type="submit">Save user</button></div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><p>© 2026 Enterprise Accessible Dashboard</p></footer>
+  </div>
+
+  <dialog class="modal" id="add-dialog" aria-labelledby="add-dialog-title">
+    <h2 id="add-dialog-title">Add user</h2>
+    <p>This is a responsive modal. Press Escape or use the buttons to close.</p>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+      <button class="btn" type="button" data-modal-close>Confirm</button>
+    </div>
+  </dialog>
+</body>
+</html>

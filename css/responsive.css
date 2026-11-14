@@ -1,0 +1,37 @@
+/* responsive.css — mobile-first. 320px base styles live in the other files.
+   Breakpoints (min-width): 768 tablet, 1024 laptop, 1440 desktop. */
+
+@media (min-width: 768px) {              /* Tablet */
+  .main-content { padding: var(--space-lg); }
+  .site-header { padding-inline: var(--space-lg); }
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+  .card--wide { grid-column: span 2; }
+  .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-field--full { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1024px) {             /* Laptop: permanent sidebar */
+  .app-shell {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+  }
+  .sidebar {
+    grid-area: sidebar;
+    position: sticky; top: 0; height: 100vh;
+    width: auto;
+    transform: none; visibility: visible;
+    box-shadow: none;
+  }
+  .sidebar-overlay { display: none !important; }
+  [data-nav-toggle] { display: none; }
+  .main-content { padding: var(--space-xl); }
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card--wide { grid-column: span 2; }
+  .card--full { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1440px) {             /* Desktop */
+  .container { max-width: var(--container-xl); }
+  .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-xl); }
+}
